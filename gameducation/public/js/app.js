@@ -33,35 +33,37 @@ const COLLECTIBLES = [
   { id: "nusantara", name: "Nusantara", blurb: "Tukar 200 permata", cost: 200 },
 ];
 
-const lightVars = {
-  "--gd-bg": "#F6F1E7",
-  "--gd-bg-elevated": "#FFFFFF",
-  "--gd-text": "#1E2430",
-  "--gd-text-muted": "#5B6472",
-  "--gd-border": "rgba(30,36,48,0.12)",
-  "--gd-accent": "#2F4C7A",
-  "--gd-accent-soft": "rgba(47,76,122,0.10)",
-  "--gd-success": "#3F7D58",
-  "--gd-success-soft": "rgba(63,125,88,0.12)",
-  "--gd-error": "#B23A48",
-  "--gd-error-soft": "rgba(178,58,72,0.12)",
-  "--gd-warning": "#C08A2E",
-  "--gd-on-accent": "#FBF9F4",
-};
-const darkVars = {
-  "--gd-bg": "#12151C",
-  "--gd-bg-elevated": "#1B2029",
-  "--gd-text": "#EDE7D9",
-  "--gd-text-muted": "#9AA3B2",
-  "--gd-border": "rgba(237,231,217,0.14)",
-  "--gd-accent": "#7C9CC4",
-  "--gd-accent-soft": "rgba(124,156,196,0.16)",
-  "--gd-success": "#6FBE8C",
-  "--gd-success-soft": "rgba(111,190,140,0.16)",
-  "--gd-error": "#E08A93",
-  "--gd-error-soft": "rgba(224,138,147,0.16)",
-  "--gd-warning": "#E0B15C",
-  "--gd-on-accent": "#12151C",
+const THEMES = {
+  gading: {
+    label: "Gading",
+    vars: { "--gd-bg": "#F6F1E7", "--gd-bg-elevated": "#FFFFFF", "--gd-text": "#1E2430", "--gd-text-muted": "#5B6472", "--gd-border": "rgba(30,36,48,0.12)", "--gd-accent": "#2F4C7A", "--gd-accent-soft": "rgba(47,76,122,0.10)", "--gd-success": "#3F7D58", "--gd-success-soft": "rgba(63,125,88,0.12)", "--gd-error": "#B23A48", "--gd-error-soft": "rgba(178,58,72,0.12)", "--gd-warning": "#C08A2E", "--gd-on-accent": "#FBF9F4" },
+    pattern: "radial-gradient(circle at 18% 8%, rgba(47,76,122,0.10), transparent 30%), radial-gradient(circle at 92% 86%, rgba(178,58,72,0.08), transparent 28%), repeating-linear-gradient(45deg, rgba(47,76,122,0.05) 0 2px, transparent 2px 14px)",
+  },
+  malam: {
+    label: "Malam",
+    vars: { "--gd-bg": "#12151C", "--gd-bg-elevated": "#1B2029", "--gd-text": "#EDE7D9", "--gd-text-muted": "#9AA3B2", "--gd-border": "rgba(237,231,217,0.14)", "--gd-accent": "#7C9CC4", "--gd-accent-soft": "rgba(124,156,196,0.16)", "--gd-success": "#6FBE8C", "--gd-success-soft": "rgba(111,190,140,0.16)", "--gd-error": "#E08A93", "--gd-error-soft": "rgba(224,138,147,0.16)", "--gd-warning": "#E0B15C", "--gd-on-accent": "#12151C" },
+    pattern: "radial-gradient(circle at 80% 10%, rgba(124,156,196,0.16), transparent 26%), repeating-linear-gradient(-45deg, rgba(237,231,217,0.04) 0 2px, transparent 2px 16px)",
+  },
+  batik: {
+    label: "Batik Merah",
+    vars: { "--gd-bg": "#F8EDE8", "--gd-bg-elevated": "#FFF8F5", "--gd-text": "#3A1E22", "--gd-text-muted": "#7A4A50", "--gd-border": "rgba(138,40,48,0.16)", "--gd-accent": "#9B2C38", "--gd-accent-soft": "rgba(155,44,56,0.12)", "--gd-success": "#3F7D58", "--gd-success-soft": "rgba(63,125,88,0.12)", "--gd-error": "#8B1E2D", "--gd-error-soft": "rgba(139,30,45,0.12)", "--gd-warning": "#C08A2E", "--gd-on-accent": "#FFF8F5" },
+    pattern: "repeating-radial-gradient(circle at 12px 12px, rgba(155,44,56,0.09) 0 2px, transparent 2px 18px), repeating-linear-gradient(30deg, rgba(155,44,56,0.06) 0 3px, transparent 3px 18px)",
+  },
+  laut: {
+    label: "Laut",
+    vars: { "--gd-bg": "#E7F1F4", "--gd-bg-elevated": "#FFFFFF", "--gd-text": "#14323C", "--gd-text-muted": "#4E6B74", "--gd-border": "rgba(20,50,60,0.12)", "--gd-accent": "#1E6B78", "--gd-accent-soft": "rgba(30,107,120,0.12)", "--gd-success": "#2F7D62", "--gd-success-soft": "rgba(47,125,98,0.12)", "--gd-error": "#B23A48", "--gd-error-soft": "rgba(178,58,72,0.12)", "--gd-warning": "#C08A2E", "--gd-on-accent": "#F4FBFC" },
+    pattern: "radial-gradient(circle at 10% 90%, rgba(30,107,120,0.12), transparent 32%), repeating-linear-gradient(180deg, rgba(30,107,120,0.05) 0 8px, transparent 8px 20px)",
+  },
+  hutan: {
+    label: "Hutan",
+    vars: { "--gd-bg": "#EAF3EA", "--gd-bg-elevated": "#F7FBF7", "--gd-text": "#1C3324", "--gd-text-muted": "#4E6A56", "--gd-border": "rgba(28,51,36,0.12)", "--gd-accent": "#2F6B45", "--gd-accent-soft": "rgba(47,107,69,0.12)", "--gd-success": "#2A7A4A", "--gd-success-soft": "rgba(42,122,74,0.14)", "--gd-error": "#B23A48", "--gd-error-soft": "rgba(178,58,72,0.12)", "--gd-warning": "#C08A2E", "--gd-on-accent": "#F4FBF6" },
+    pattern: "repeating-linear-gradient(60deg, rgba(47,107,69,0.07) 0 10px, transparent 10px 22px), radial-gradient(circle at 88% 12%, rgba(47,107,69,0.12), transparent 28%)",
+  },
+  kunyit: {
+    label: "Kunyit",
+    vars: { "--gd-bg": "#F7F0DC", "--gd-bg-elevated": "#FFFBF0", "--gd-text": "#3B2E12", "--gd-text-muted": "#7A6840", "--gd-border": "rgba(59,46,18,0.14)", "--gd-accent": "#B8860B", "--gd-accent-soft": "rgba(184,134,11,0.14)", "--gd-success": "#3F7D58", "--gd-success-soft": "rgba(63,125,88,0.12)", "--gd-error": "#B23A48", "--gd-error-soft": "rgba(178,58,72,0.12)", "--gd-warning": "#C08A2E", "--gd-on-accent": "#3B2E12" },
+    pattern: "repeating-linear-gradient(-30deg, rgba(184,134,11,0.08) 0 6px, transparent 6px 16px), radial-gradient(circle at 50% 0%, rgba(184,134,11,0.10), transparent 40%)",
+  },
 };
 
 const ICONS = {
@@ -153,6 +155,7 @@ function buildSessionQuestions(pool, count, shuffleQ) {
       options: shuffled.map((s) => s.opt),
       correctIndex: shuffled.findIndex((s) => s.idx === (q.a != null ? q.a : q.correct_index)),
       ex: q.ex || q.explanation || "",
+      img: q.img || q.image_url || "",
       timeLimit: TIME_BY_DIFFICULTY[q.diff || q.difficulty] || 20,
       multiplier: POINTS_MULTIPLIER[q.diff || q.difficulty] || 1,
     };
@@ -161,7 +164,7 @@ function buildSessionQuestions(pool, count, shuffleQ) {
 
 const state = {
   view: "splash",
-  theme: "light",
+  theme: "gading",
   sound: true,
   leaderboard: [],
   category: "semua",
@@ -178,7 +181,7 @@ const state = {
   authName: "",
   authError: "",
   user: null,
-  profile: { display_name: "Tamu", gems: 0, streak: 0, inventory: ["pemula"], last_play_date: null, daily_claimed_on: null, is_guest: true },
+  profile: { display_name: "Tamu", bio: "", avatar: "", gems: 0, streak: 0, inventory: ["pemula"], featured: ["pemula"], last_play_date: null, daily_claimed_on: null, is_guest: true },
   questionSource: "bank",
   customSetId: "",
   customSets: [],
@@ -230,12 +233,15 @@ const party = {
   error: "",
   ex: "",
   revealed: false,
+  presence: {},
 };
 
 (function loadPersisted() {
   const s = storageGet(SETTINGS_KEY);
   if (s) {
-    if (s.theme) state.theme = s.theme;
+    if (s.theme === "dark") state.theme = "malam";
+    else if (s.theme === "light") state.theme = "gading";
+    else if (s.theme && THEMES[s.theme]) state.theme = s.theme;
     if (typeof s.sound === "boolean") state.sound = s.sound;
   }
   const lb = storageGet(LEADERBOARD_KEY);
@@ -285,10 +291,10 @@ function playTone(kind) {
     osc.frequency.setValueAtTime(520, now);
   }
   gain.gain.setValueAtTime(0.0001, now);
-  gain.gain.exponentialRampToValueAtTime(0.16, now + 0.02);
-  gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.28);
+  gain.gain.exponentialRampToValueAtTime(0.42, now + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.32);
   osc.start(now);
-  osc.stop(now + 0.3);
+  osc.stop(now + 0.34);
 }
 
 function initSupabase() {
@@ -317,11 +323,14 @@ async function loadRemoteProfile() {
   const inv = await supabase.from("inventory").select("item_id").eq("user_id", state.user.id);
   state.profile = {
     display_name: data.display_name || state.profile.display_name,
+    bio: data.bio || state.profile.bio || "",
+    avatar: data.avatar_url || state.profile.avatar || "",
     gems: Math.max(data.gems || 0, state.profile.gems || 0),
     streak: data.streak || 0,
     last_play_date: data.last_play_date,
     daily_claimed_on: data.daily_claimed_on,
     inventory: ((inv.data || []).map((r) => r.item_id)).concat(state.profile.inventory || []).filter((v, i, a) => a.indexOf(v) === i),
+    featured: Array.isArray(data.featured) ? data.featured : (state.profile.featured || []),
     is_guest: false,
   };
   persistProfile();
@@ -344,6 +353,7 @@ async function loadRemoteProfile() {
           ex: q.explanation,
           cat: q.category,
           diff: q.difficulty,
+          img: q.image_url || "",
         })),
       });
     }
@@ -358,6 +368,9 @@ async function saveRemoteProfile() {
   await supabase.from("profiles").upsert({
     id: state.user.id,
     display_name: state.profile.display_name,
+    bio: state.profile.bio || "",
+    avatar_url: (state.profile.avatar || "").slice(0, 300000),
+    featured: state.profile.featured || [],
     gems: state.profile.gems,
     streak: state.profile.streak,
     last_play_date: state.profile.last_play_date,
@@ -451,11 +464,16 @@ window.toggleSound = function () {
   persistSettings();
   render();
 };
-window.toggleTheme = function () {
-  state.theme = state.theme === "dark" ? "light" : "dark";
+window.setTheme = function (id) {
+  if (!THEMES[id]) return;
+  state.theme = id;
   persistSettings();
-  document.body.style.backgroundColor = state.theme === "dark" ? "#12151C" : "#F6F1E7";
   render();
+};
+window.toggleTheme = function () {
+  const keys = Object.keys(THEMES);
+  const i = keys.indexOf(state.theme);
+  window.setTheme(keys[(i + 1) % keys.length]);
 };
 window.setCategory = function (k) { state.category = k; render(); };
 window.setDifficulty = function (d) { state.difficulty = d; render(); };
@@ -687,7 +705,7 @@ window.openEditor = function (id) {
     ? JSON.parse(JSON.stringify(existing))
     : { id: "local-" + Date.now().toString(36), title: "Set baru", description: "", questions: [], remote: false };
   if (!state.editor.questions.length) {
-    state.editor.questions.push({ id: "q1", q: "", o: ["", "", "", ""], a: 0, ex: "", cat: "campuran", diff: "sedang" });
+    state.editor.questions.push({ id: "q1", q: "", o: ["", "", "", ""], a: 0, ex: "", cat: "campuran", diff: "sedang", img: "" });
   }
   state.view = "editor";
   render();
@@ -701,7 +719,20 @@ window.editOption = function (qi, oi, value) {
   state.editor.questions[qi].o[oi] = value;
 };
 window.addEditorQuestion = function () {
-  state.editor.questions.push({ id: "q" + Date.now(), q: "", o: ["", "", "", ""], a: 0, ex: "", cat: "campuran", diff: "sedang" });
+  state.editor.questions.push({ id: "q" + Date.now(), q: "", o: ["", "", "", ""], a: 0, ex: "", cat: "campuran", diff: "sedang", img: "" });
+  render();
+};
+window.onQuestionImage = function (idx, el) {
+  const file = el.files && el.files[0];
+  if (!file || !state.editor) return;
+  compressImageFile(file, 720, 0.62).then(function (url) {
+    state.editor.questions[idx].img = url;
+    render();
+  });
+};
+window.clearQuestionImage = function (idx) {
+  if (!state.editor) return;
+  state.editor.questions[idx].img = "";
   render();
 };
 window.removeEditorQuestion = function (idx) {
@@ -739,6 +770,7 @@ window.saveEditor = async function () {
         explanation: q.ex || "",
         category: q.cat || "campuran",
         difficulty: q.diff || "sedang",
+        image_url: q.img || "",
         sort_order: i,
       }));
       if (rows.length) await supabase.from("custom_questions").insert(rows);
@@ -807,8 +839,9 @@ function partySnapshot() {
     timeLeft: party.timeLeft,
     revealed: party.revealed,
     q: party.q
-      ? { text: party.q.text, cat: party.q.cat, diff: party.q.diff, options: party.q.options }
+      ? { text: party.q.text, cat: party.q.cat, diff: party.q.diff, options: party.q.options, img: party.q.img || "" }
       : null,
+    presence: party.presence || {},
     ex: party.revealed && party.q ? party.q.ex || "" : "",
     correctIndex: party.revealed && party.q ? party.q.correctIndex : -1,
     submissions: party.submissions,
@@ -931,11 +964,15 @@ function applySnap(s) {
   party.leaderboard = s.leaderboard || [];
   party.settings = s.settings || party.settings;
   party.ex = s.ex || "";
+  if (s.presence) party.presence = s.presence;
   if (party.role === "student" && !party.myId && s.players) {
     const me = s.players.find((p) => p.id === party.sendId);
     if (me) party.myId = me.id;
   }
   render();
+  if (party.role === "student" && s.phase === "question" && qnChanged) {
+    setTimeout(function () { window.requestClassFullscreen(); sendPresence(); }, 200);
+  }
 }
 function partyOnMessage(msg) {
   if (!msg || typeof msg !== "object") return;
@@ -943,6 +980,11 @@ function partyOnMessage(msg) {
     if (msg.type === "join") hostHandleJoin(msg);
     else if (msg.type === "answer") hostHandleAnswer(msg);
     else if (msg.type === "leave") hostHandleLeave(msg);
+    else if (msg.type === "presence") {
+      party.presence = party.presence || {};
+      party.presence[msg.id] = { hidden: !!msg.hidden, fullscreen: !!msg.fullscreen };
+      render();
+    }
     return;
   }
   if (msg.type === "error") {
@@ -972,6 +1014,7 @@ function questionsForRoom() {
     options: q.options,
     correctIndex: q.correctIndex,
     ex: q.ex,
+    img: q.img || "",
     timeLimit: q.timeLimit,
     multiplier: q.multiplier,
   }));
@@ -1119,14 +1162,23 @@ function difficultyArt(catKey, diffKey) {
   );
 }
 
+function currentTheme() {
+  return THEMES[state.theme] || THEMES.gading;
+}
+function applyThemeToBody() {
+  const t = currentTheme();
+  document.body.style.backgroundColor = t.vars["--gd-bg"];
+  document.body.style.backgroundImage = t.pattern;
+  document.body.style.backgroundAttachment = "fixed";
+}
 function render() {
   const root = document.getElementById("app");
-  const vars = state.theme === "dark" ? darkVars : lightVars;
+  const t = currentTheme();
   let css = "";
-  for (const k in vars) css += k + ":" + vars[k] + ";";
+  for (const k in t.vars) css += k + ":" + t.vars[k] + ";";
   root.style.cssText = css;
   root.dataset.theme = state.theme;
-  document.body.style.backgroundColor = vars["--gd-bg"];
+  applyThemeToBody();
   root.innerHTML =
     '<div class="gd-wrap">' +
     (state.view !== "splash" ? topbarHTML() : "") +
@@ -1143,6 +1195,7 @@ function topbarHTML() {
     '<button class="gd-icon-btn gd-focusable" onclick="goHome()" aria-label="Beranda">' + icon("home", 18) + "</button>" +
     '<div class="gd-font-display" style="font-weight:600;font-size:18px">Gameducation</div>' +
     '<div style="display:flex;gap:6px">' +
+    '<button class="gd-icon-btn gd-focusable" onclick="goView(&quot;profile&quot;)" aria-label="Profil">' + icon("user", 18) + "</button>" +
     '<button class="gd-icon-btn gd-focusable" onclick="goView(&quot;collection&quot;)" aria-label="Permata">' + icon("gem", 18) + "</button>" +
     '<button class="gd-icon-btn gd-focusable" onclick="toggleSound()" aria-label="Suara">' + icon(state.sound ? "volume2" : "volumeX", 18) + "</button>" +
     '<button class="gd-icon-btn gd-focusable" onclick="openSettings()" aria-label="Pengaturan">' + icon("settings", 18) + "</button>" +
@@ -1158,6 +1211,7 @@ function viewHTML() {
     case "results": return resultsHTML();
     case "review": return reviewHTML();
     case "leaderboard": return leaderboardHTML();
+    case "profile": return profileHTML();
     case "collection": return collectionHTML();
     case "sets": return setsHTML();
     case "editor": return editorHTML();
@@ -1287,6 +1341,7 @@ function quizHTML() {
     '<div style="display:flex;justify-content:space-between;margin-bottom:10px"><span class="gd-text-muted" style="font-size:13px">Soal ' + (quiz.index + 1) + "/" + total + '</span><span style="font-size:13px;display:flex;align-items:center;gap:4px">' + icon("clock", 14) + '<span id="quiz-time">' + quizTimeLeft + "s</span></span></div>" +
     '<div style="height:6px;border-radius:6px;background:var(--gd-border);overflow:hidden;margin-bottom:12px"><div id="quiz-progress" style="height:100%;width:' + progressPct + "%;background:" + timeColor + '"></div></div>' +
     difficultyArt(q.cat, q.diff) +
+    questionImageHTML(q.img) +
     '<h2 style="font-size:19px;font-weight:600;line-height:1.4;margin:16px 0">' + escapeHTML(q.q) + "</h2>" +
     '<div class="gd-stack">' + options + "</div>" +
     (quizAnswered && q.ex ? '<div class="gd-surface" style="border-radius:12px;padding:12px;margin-top:12px;font-size:13px"><strong>Fakta singkat</strong><div class="gd-text-muted">' + escapeHTML(q.ex) + "</div></div>" : "") +
@@ -1337,6 +1392,94 @@ function leaderboardHTML() {
   return '<div class="gd-anim-in gd-stack"><button class="gd-btn-ghost" onclick="goHome()">' + icon("arrowLeft", 16) + "<span>Kembali</span></button><h2 class=\"gd-font-display\" style=\"margin:0\">Papan Peringkat</h2>" + (rows || '<div class="gd-surface" style="padding:24px;text-align:center;border-radius:16px">Belum ada skor.</div>') + "</div>";
 }
 
+function questionImageHTML(src) {
+  if (!src) return "";
+  return '<img class="gd-qimg" src="' + escapeHTML(src) + '" alt="Gambar soal" />';
+}
+function compressImageFile(file, maxW, quality) {
+  return new Promise(function (resolve) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      const img = new Image();
+      img.onload = function () {
+        const scale = Math.min(1, (maxW || 720) / img.width);
+        const c = document.createElement("canvas");
+        c.width = Math.max(1, Math.round(img.width * scale));
+        c.height = Math.max(1, Math.round(img.height * scale));
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+        resolve(c.toDataURL("image/jpeg", quality || 0.62));
+      };
+      img.onerror = function () { resolve(""); };
+      img.src = reader.result;
+    };
+    reader.onerror = function () { resolve(""); };
+    reader.readAsDataURL(file);
+  });
+}
+window.onAvatarFile = function (el) {
+  const file = el.files && el.files[0];
+  if (!file) return;
+  compressImageFile(file, 320, 0.7).then(function (url) {
+    if (!url) return;
+    state.profile.avatar = url;
+    persistProfile();
+    saveRemoteProfile();
+    render();
+  });
+};
+window.setProfileName = function (v) { state.profile.display_name = String(v).slice(0, 20); };
+window.setProfileBio = function (v) { state.profile.bio = String(v).slice(0, 80); };
+window.saveProfileEdits = function () {
+  persistProfile();
+  saveRemoteProfile();
+  render();
+};
+window.toggleFeatured = function (id) {
+  const owned = (state.profile.inventory || []).indexOf(id) >= 0;
+  if (!owned) return;
+  let feat = (state.profile.featured || []).slice();
+  const i = feat.indexOf(id);
+  if (i >= 0) feat.splice(i, 1);
+  else {
+    if (feat.length >= 3) feat.shift();
+    feat.push(id);
+  }
+  state.profile.featured = feat;
+  persistProfile();
+  saveRemoteProfile();
+  render();
+};
+function profileHTML() {
+  const p = state.profile;
+  const av = p.avatar
+    ? '<img src="' + escapeHTML(p.avatar) + '" alt="" style="width:88px;height:88px;border-radius:50%;object-fit:cover;border:3px solid var(--gd-accent)" />'
+    : '<div class="gd-accent-bg" style="width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center">' + icon("user", 36) + "</div>";
+  const feat = (p.featured || []).map((id) => {
+    const c = COLLECTIBLES.find((x) => x.id === id);
+    return c ? '<span class="gd-tag">' + escapeHTML(c.name) + "</span>" : "";
+  }).join("");
+  const owned = COLLECTIBLES.filter((c) => (p.inventory || []).indexOf(c.id) >= 0).map((c) => {
+    const on = (p.featured || []).indexOf(c.id) >= 0;
+    return '<button class="gd-pill' + (on ? " gd-pill-active" : "") + '" onclick="toggleFeatured(\'' + c.id + "')\">" + escapeHTML(c.name) + (on ? " ★" : "") + "</button>";
+  }).join("");
+  return (
+    '<div class="gd-anim-in gd-stack">' +
+    '<button class="gd-btn-ghost" onclick="goHome()">' + icon("arrowLeft", 16) + "<span>Kembali</span></button>" +
+    '<div class="gd-surface" style="border-radius:20px;padding:20px;text-align:center">' +
+    av +
+    '<div style="margin-top:10px"><label class="gd-btn-secondary">Ganti foto<input type="file" accept="image/*" style="display:none" onchange="onAvatarFile(this)" /></label></div>' +
+    '<input class="gd-input" style="margin-top:12px;text-align:center;font-weight:700" value="' + escapeHTML(p.display_name || "") + '" oninput="setProfileName(this.value)" />' +
+    '<input class="gd-input" style="margin-top:8px" placeholder="Bio singkat" value="' + escapeHTML(p.bio || "") + '" oninput="setProfileBio(this.value)" />' +
+    '<button class="gd-btn-primary" style="margin-top:10px;width:100%" onclick="saveProfileEdits()">Simpan profil</button>' +
+    '<div style="display:flex;justify-content:center;gap:16px;margin-top:14px;font-size:13px"><div><b>' + (p.gems || 0) + "</b><div class=\"gd-text-muted\">permata</div></div><div><b>" + (p.streak || 0) + '</b><div class="gd-text-muted">streak</div></div></div>' +
+    '<div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center">' + (feat || '<span class="gd-text-muted">Belum ada lencana dipamerkan</span>') + "</div>" +
+    "</div>" +
+    '<div class="gd-label">Pamerkan sampai 3 lencana</div>' +
+    '<div style="display:flex;flex-wrap:wrap;gap:8px">' + (owned || '<p class="gd-text-muted">Kumpulkan lencana di Koleksi dulu.</p>') + "</div>" +
+    "</div>"
+  );
+}
+
 function collectionHTML() {
   const cards = COLLECTIBLES.map((c) => {
     const owned = (state.profile.inventory || []).indexOf(c.id) >= 0;
@@ -1372,6 +1515,9 @@ function editorHTML() {
       '<div class="gd-label">Soal ' + (i + 1) + "</div>" +
       '<textarea class="gd-textarea" oninput="editQuestionField(' + i + ",'q',this.value)\">" + escapeHTML(q.q) + "</textarea>" +
       opts +
+      questionImageHTML(q.img) +
+      '<label class="gd-btn-secondary" style="margin-top:8px">Tambah gambar<input type="file" accept="image/*" style="display:none" onchange="onQuestionImage(' + i + ',this)" /></label>' +
+      (q.img ? '<button class="gd-btn-ghost" onclick="clearQuestionImage(' + i + ')">Hapus gambar</button>' : "") +
       '<button class="gd-btn-ghost" onclick="removeEditorQuestion(' + i + ')">Hapus soal</button></div>'
     );
   }).join("");
@@ -1385,8 +1531,12 @@ function editorHTML() {
   );
 }
 
-function partyChip(name, answered, isTeacher) {
-  return '<div style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--gd-border);font-size:13px">' + (isTeacher ? icon("award", 13) : answered ? icon("check", 13) : icon("clock", 13)) + escapeHTML(name) + "</div>";
+function partyChip(name, answered, isTeacher, id) {
+  const pr = (party.presence && id && party.presence[id]) || {};
+  let flag = "";
+  if (!isTeacher && pr.hidden) flag = ' <span class="gd-badge-error">keluar tab</span>';
+  else if (!isTeacher && pr.fullscreen === false) flag = ' <span class="gd-badge-error">keluar layar penuh</span>';
+  return '<div style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--gd-border);font-size:13px">' + (isTeacher ? icon("award", 13) : answered ? icon("check", 13) : icon("clock", 13)) + escapeHTML(name) + flag + "</div>";
 }
 
 function partyHostHTML() {
@@ -1400,8 +1550,9 @@ function partyHostHTML() {
       '<div class="gd-anim-in gd-stack">' + header +
       '<div style="display:flex;justify-content:space-between"><span class="gd-text-muted">Soal ' + (s.questionNumber + 1) + "/" + s.total + '</span><span id="quiz-time">' + s.timeLeft + "s</span></div>" +
       '<div style="height:6px;border-radius:6px;background:var(--gd-border);overflow:hidden"><div style="height:100%;width:' + pct + '%;background:var(--gd-accent)"></div></div>' +
+      questionImageHTML(s.q.img) +
       '<h2 style="font-size:18px">' + escapeHTML(s.q.text) + "</h2>" +
-      '<div style="display:flex;flex-wrap:wrap;gap:8px">' + students.map((p) => partyChip(p.name, !!s.submissions[p.id], false)).join("") + "</div>" +
+      '<div style="display:flex;flex-wrap:wrap;gap:8px">' + students.map((p) => partyChip(p.name, !!s.submissions[p.id], false, p.id)).join("") + "</div>" +
       (s.revealed
         ? '<div class="gd-surface" style="border-radius:14px;padding:14px">Kunci: ' + String.fromCharCode(65 + s.correctIndex) + ". " + escapeHTML(s.q.options[s.correctIndex]) +
           (s.questionNumber + 1 >= s.total
@@ -1447,7 +1598,7 @@ function partyStudentHTML() {
       const dis = party.revealed || party._myAnswered !== null ? " disabled" : "";
       return '<button class="' + cls + '"' + dis + ' onclick="partyStudentAnswer(' + i + ')"><span class="gd-option-letter">' + String.fromCharCode(65 + i) + "</span>" + escapeHTML(opt) + "</button>";
     }).join("");
-    return '<div class="gd-anim-in gd-stack"><div style="display:flex;justify-content:space-between"><b>' + escapeHTML(party.myName) + "</b><button class=\"gd-btn-ghost\" onclick=\"leaveParty();goHome()\">Keluar</button></div><div class=\"gd-text-muted\">Soal " + (party.questionNumber + 1) + "/" + party.total + " · " + party.timeLeft + "s</div><h2 style=\"font-size:18px\">" + escapeHTML(party.q.text) + "</h2>" + options + "</div>";
+    return '<div class="gd-anim-in gd-stack"><div style="display:flex;justify-content:space-between"><b>' + escapeHTML(party.myName) + "</b><button class=\"gd-btn-ghost\" onclick=\"leaveParty();goHome()\">Keluar</button></div><div class=\"gd-text-muted\">Soal " + (party.questionNumber + 1) + "/" + party.total + " · " + party.timeLeft + "s</div>" + questionImageHTML(party.q.img) + "<h2 style=\"font-size:18px\">" + escapeHTML(party.q.text) + "</h2>" + options + '<button class="gd-btn-secondary" onclick="requestClassFullscreen()">Layar penuh</button></div>';
   }
   if (party.phase === "final") {
     const me = (party.leaderboard || []).find((e) => e.id === party.myId);
@@ -1461,7 +1612,10 @@ function settingsModalHTML() {
     '<div class="gd-modal-back" onclick="if(event.target===this)closeSettings()"><div class="gd-modal gd-stack">' +
     '<div style="display:flex;justify-content:space-between;align-items:center"><h3 class="gd-font-display" style="margin:0">Pengaturan</h3><button class="gd-icon-btn" onclick="closeSettings()">' + icon("x", 16) + "</button></div>" +
     '<div class="gd-surface" style="border-radius:14px;padding:14px;display:flex;justify-content:space-between;align-items:center"><span>Suara</span><button class="gd-btn-secondary" onclick="toggleSound()">' + (state.sound ? "Nyala" : "Mati") + "</button></div>" +
-    '<div class="gd-surface" style="border-radius:14px;padding:14px;display:flex;justify-content:space-between;align-items:center"><span>Mode gelap</span><button class="gd-btn-secondary" onclick="toggleTheme()">' + (state.theme === "dark" ? "Gelap" : "Terang") + "</button></div>" +
+    '<div class="gd-label">Tema tampilan</div>' +
+    '<div class="gd-grid-diff">' + Object.keys(THEMES).map(function (id) {
+      return pill(state.theme === id, "setTheme(&quot;" + id + "&quot;)", THEMES[id].label);
+    }).join("") + "</div>" +
     (state.resetConfirm
       ? '<div style="display:flex;gap:8px"><button class="gd-btn-danger" onclick="confirmReset()">Ya, hapus</button><button class="gd-btn-secondary" onclick="cancelReset()">Batal</button></div>'
       : '<button class="gd-btn-danger-outline" onclick="requestReset()">Reset papan peringkat</button>') +
@@ -1485,9 +1639,30 @@ function authModalHTML() {
   );
 }
 
+function sendPresence() {
+  if (party.role !== "student" || !party.sendId || party.phase !== "question") return;
+  const hidden = document.visibilityState === "hidden";
+  const fs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+  partySend({
+    type: "presence",
+    id: party.myId || party.sendId,
+    hidden: hidden,
+    fullscreen: fs,
+  });
+}
+window.requestClassFullscreen = function () {
+  const el = document.documentElement;
+  const req = el.requestFullscreen || el.webkitRequestFullscreen;
+  if (req) req.call(el).catch(function () {});
+  setTimeout(sendPresence, 400);
+};
+document.addEventListener("visibilitychange", sendPresence);
+document.addEventListener("fullscreenchange", sendPresence);
+document.addEventListener("webkitfullscreenchange", sendPresence);
+
 document.addEventListener("DOMContentLoaded", async function () {
   initSupabase();
-  document.body.style.backgroundColor = state.theme === "dark" ? "#12151C" : "#F6F1E7";
+  applyThemeToBody();
   render();
   if (supabase) {
     await refreshSession();
